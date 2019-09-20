@@ -40,7 +40,7 @@ def sortCluster():
     #
     
     #Define pivots
-    increment = data.length/4
+    increment = len(data)/4
     pivot1 = increment
     pivot2 = pivot1 + increment
     pivot3 = pivot2 + increment
@@ -89,7 +89,7 @@ def present():
 
 def sortOne():
     if rank == 0: 
-        data = np.random.randint(1,20001,20000)
+        data = random.sample(range(0,100000000),100000000)
         print ('Rank: ',rank,'has the array: ',data)
         startTimeSolo = time.time()
         data = selectionSort(data)  
@@ -140,8 +140,8 @@ rank = comm.Get_rank()
 tempoSolo = 0
 tempoCluster = 0
 #
-  
-menu()
+if rank == 0:
+   menu()
 
 
 
