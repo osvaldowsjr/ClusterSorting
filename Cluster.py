@@ -1,5 +1,5 @@
 #Importing libs
-import numpy as np
+import random
 from mpi4py import MPI
 import time
 #
@@ -28,7 +28,7 @@ def selectionSort(alist):
 def sortCluster():
     if rank == 0: 
         #Create list
-        data = np.random.randint(1,20001,20000)
+        data = random.sample(range(0,100000000),100000000)
         print ('Scattering data',data)
         #
     else:
