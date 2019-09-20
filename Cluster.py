@@ -78,6 +78,7 @@ def sortCluster():
     
 
 def present():
+    #global rank
     if rank == 0:
         print("I'm the master e o node ",rank)
     elif rank ==1:
